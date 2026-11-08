@@ -152,3 +152,5 @@ section{padding:72px 0 0}
 footer{margin-top:80px;background:var(--ink);color:var(--on-ink);padding:32px 0 40px;font-size:.88rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;opacity:.85}
 footer b{color:var(--gold);font-weight:600}
+footer a{color:inherit;text-decoration:underline}
+footer a:hover{color:var(--gold)}
