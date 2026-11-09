@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events · VThink Tech Hub</title>
+<meta name="description" content="Workshops, pitch sessions and talks at VThink Tech Hub, the startup and innovation hub of Vikas College of Engineering and Technology, Nunna.">
+<meta property="og:title" content="Events · VThink Tech Hub">
+<meta property="og:description" content="Workshops, pitch sessions and talks for student founders at Vikas College.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vthinktechhub.github.io/events.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/vthink-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="VThink Tech Hub home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 L57 17.5 L57 46.5 L32 61 L7 46.5 L7 17.5 Z" fill="none" stroke="#E39B12" stroke-width="3" stroke-linejoin="round"/><path d="M17 20 L26 20 L35 45 L30 45 Z" fill="#F4F6FB"/><path d="M30 45 L35 45 L47 20 L38 20 Z" fill="#E39B12"/></svg>
+      <span class="brand-text"><span class="brand-name">VThink</span><span class="brand-sub">Tech Hub</span></span>
+    </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="index.html#cohort">Startups</a>
+      <a href="events.html" aria-current="page">Events</a>
+      <a href="index.html#mentors">Mentors</a>
+      <a href="index.html#team">Team</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="navcta" href="index.html#mentors">Become a mentor</a>
+  </div>
+</header>
+
+<main class="evpage">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol><li><a href="index.html">VThink Tech Hub</a></li><li aria-current="page">Events</li></ol>
+    </nav>
+
+    <!-- Featured banner: the next upcoming event, or the latest one if nothing is coming up -->
+    <div id="featured"></div>
+
+    <section class="evsec" id="upcoming-sec">
+      <div class="sechead">
+        <div class="kicker">Coming up</div>
+        <h2>Upcoming events</h2>
+      </div>
+      <div class="evgrid" id="upcoming"></div>
+    </section>
+
+    <section class="evsec" id="past-sec">
+      <div class="sechead">
+        <div class="kicker">Archive</div>
+        <h2>Past events</h2>
+      </div>
+      <div class="evgrid" id="past"></div>
+    </section>
+
+    <noscript><p class="pending">Turn on JavaScript to see the events list.</p></noscript>
+  </div>
+</main>
+
+<dialog class="evmodal" id="evmodal" aria-labelledby="evm-title">
+  <button class="evclose" type="button" aria-label="Close">×</button>
+  <div class="evm-slider" id="evm-slider" role="region" aria-roledescription="carousel" aria-label="Event photos">
+    <div class="evs-view"><div class="evs-track" id="evs-track"></div></div>
+    <button class="evs-arrow prev" id="evs-prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="evs-arrow next" id="evs-next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="evs-foot"><div class="evs-dots" id="evs-dots"></div><span class="evs-count" id="evs-count" aria-live="polite"></span></div>
+  </div>
+  <div class="evm-body">
+    <div class="kicker" id="evm-type"></div>
+    <h2 id="evm-title"></h2>
+    <dl class="evm-meta" id="evm-meta"></dl>
+    <p id="evm-summary"></p>
+    <div class="btns" id="evm-actions"></div>
+  </div>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 VThink Tech Hub · Vikas College of Engineering and Technology, Nunna</span>
+    <span>Founded by <b>Keerthi Naredla</b></span>
+  </div>
+</footer>
+
+<script src="js/events-data.js"></script>
+<script src="js/events.js"></script>
+</body>
+</html>
