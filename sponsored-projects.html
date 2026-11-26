@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sponsored Projects · VThink Tech Hub</title>
+<meta name="description" content="Industry brings real problems, VThink Tech Hub teams solve them. Sponsor a project, see open problems and past work.">
+<meta property="og:title" content="Sponsored Projects · VThink Tech Hub">
+<meta property="og:description" content="Companies post real use cases and back them with resources and a mentor. Grassroots innovators and first-time founders take them on.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vthinktechhub.github.io/sponsored-projects.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/vthink-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout follows the University of Utah Capstone site: white header with logo block and uppercase nav,
+   underlined sub-nav tabs (one "page" per tab), left title, wide media, grey two-up panels, sponsor logo grid, dark footer.
+   Single light theme, on purpose, to match the reference. */
+:root {
+  color-scheme: light;
+  --white: #FFFFFF;
+  --panel: #F7F7F7;
+  --ink: #303133;
+  --text: #1F1F21;
+  --muted: #5E6064;
+  --line: #E6E6E6;
+  --red: #BE0000;
+  --red-dark: #9A0000;
+  --footer: #474747;
+  --footer-text: #F2F2F2;
+  --font: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+body { background: var(--white); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.65; }
+h1, h2, h3 { font-weight: 500; color: var(--ink); line-height: 1.25; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--white); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--white); box-shadow: 0 1px 8px rgba(0,0,0,.08); }
+.head-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark { width: 46px; height: 46px; background: var(--red); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 20px; letter-spacing: -.02em; border-radius: 3px; }
+.logo-text { display: grid; line-height: 1.1; }
+.logo-text small { font-size: 9px; color: var(--text); }
+.logo-text strong { font-size: 17px; font-weight: 600; letter-spacing: .01em; color: var(--text); padding-bottom: 3px; border-bottom: 1.5px solid var(--red); }
+.logo-text em { font-family: var(--serif); font-style: normal; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text); padding-top: 3px; }
+.main-nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.main-nav a { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--text); }
+.main-nav a:hover { color: var(--red); }
+.main-nav a.on { color: var(--red); font-family: var(--serif); font-weight: 400; }
+
+/* Sub-nav tabs */
+.subnav { display: flex; flex-wrap: wrap; gap: 8px 56px; padding-block: 22px 18px; border-bottom: 1px solid var(--line); }
+.subnav a { font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); text-underline-offset: 4px; padding: 0 18px 6px; }
+.subnav a:hover { color: var(--red); }
+.subnav a[aria-current="page"] { color: var(--red); text-decoration: none; border-bottom: 1.6px solid var(--red); }
+
+/* Page bits */
+.view { padding-block: 36px 72px; }
+.page-title { font-size: 29px; margin-bottom: 28px; }
+.center-title { font-size: 24px; text-align: center; margin: 48px 0 32px; }
+.caps-title { font-size: 24px; text-align: center; text-transform: uppercase; margin: 64px 0 36px; }
+.btn { display: inline-block; background: var(--red); color: #fff; font: 600 14px/1 var(--font); letter-spacing: .06em; text-transform: uppercase; padding: 16px 32px; border-radius: 8px; border: 0; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--red-dark); }
+
+.media { aspect-ratio: 16 / 9; max-width: 100%; position: relative; overflow: hidden; display: grid; place-items: center; color: #fff;
+  background: linear-gradient(120deg, rgba(20,20,22,.55), rgba(20,20,22,.15)), repeating-linear-gradient(135deg, #8C1C1C 0 26px, #7A1717 26px 52px); }
+.media-label { position: absolute; left: 20px; top: 16px; display: grid; line-height: 1.3; }
+.media-label b { font-size: 17px; font-weight: 600; }
+.media-label span { font-size: 12px; opacity: .85; }
+.play { width: 74px; height: 52px; border-radius: 14px; background: rgba(255,255,255,.92); display: grid; place-items: center; }
+.play::after { content: ""; border-left: 18px solid var(--red); border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 4px; }
+.media-note { position: absolute; right: 16px; bottom: 14px; font-size: 12px; background: rgba(0,0,0,.45); padding: 4px 10px; border-radius: 4px; }
+
+.photo { aspect-ratio: 3 / 2; max-width: 100%; display: grid; place-items: center; text-align: center; padding: 16px; font-size: 13px; color: #fff;
+  background: linear-gradient(160deg, #4A4A4E, #26262A); }
+.photo span { border: 1px dashed rgba(255,255,255,.55); padding: 6px 12px; border-radius: 4px; }
+.photo.red { background: linear-gradient(160deg, #A51515, #5E0B0B); }
+
+.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.panel { background: var(--panel); padding: 36px; display: grid; gap: 20px; align-content: start; min-width: 0; }
+.panel h2 { font-size: 29px; }
+.panel .btn { justify-self: center; margin-top: 8px; }
+
+.logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 40px; }
+.logo-slot { height: 120px; display: grid; place-items: center; border: 1px dashed #CFCFCF; color: #8A8C90; font-weight: 600; font-size: 20px; letter-spacing: .04em; text-align: center; padding: 8px; }
+.logo-slot small { display: block; font-size: 11px; font-weight: 400; letter-spacing: .04em; color: #A0A2A6; }
+
+/* Sponsor page */
+.prose { max-width: 820px; display: grid; gap: 18px; }
+.prose h2 { font-size: 22px; text-transform: uppercase; letter-spacing: .02em; margin-top: 18px; }
+.prose h3 { font-size: 18px; text-transform: uppercase; letter-spacing: .02em; margin-top: 8px; color: var(--red); }
+.prose ul { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+.btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+.btn-outline { background: transparent; color: var(--red); box-shadow: inset 0 0 0 2px var(--red); }
+.btn-outline:hover { background: var(--red); color: #fff; }
+
+form { background: var(--panel); padding: 36px; display: grid; gap: 18px; margin-top: 40px; max-width: 820px; }
+form h2 { font-size: 22px; text-transform: uppercase; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+label, .lbl { font-size: 14px; font-weight: 500; color: var(--ink); }
+.hint { font-size: 12px; color: var(--muted); font-weight: 400; }
+input[type="text"], input[type="email"], select, textarea { font: 15px var(--font); padding: 11px 12px; border: 1px solid #CDCDCD; border-radius: 4px; background: #fff; color: var(--text); width: 100%; }
+textarea { min-height: 120px; resize: vertical; }
+.checks { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 8px 24px; }
+.checks label { display: flex; gap: 8px; align-items: center; font-weight: 400; }
+.checks input { accent-color: var(--red); width: 16px; height: 16px; }
+.form-foot { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; }
+.form-foot p { font-size: 13px; color: var(--muted); max-width: 46ch; }
+.notice { border-left: 4px solid var(--red); background: #fff; padding: 14px 16px; display: grid; gap: 4px; }
+.notice strong { color: var(--ink); }
+.bad { border-color: var(--red) !important; }
+
+/* Featured projects, benefits, requirements, tracks */
+.feature .tag, .tracks .tag { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.feature { border-top: 4px solid var(--red); }
+.sec-caps { font-size: 22px; text-transform: uppercase; letter-spacing: .02em; margin: 48px 0 22px; }
+.benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.benefit { background: var(--panel); padding: 26px 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.benefit .n { font-size: 13px; font-weight: 700; color: var(--red); }
+.benefit h3 { font-size: 18px; }
+.benefit p { font-size: 14px; color: var(--muted); }
+.req-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
+.req-grid > div { padding: 24px 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.req-grid > div + div { border-left: 1px solid var(--line); }
+.req-grid h3 { font-size: 15px; text-transform: uppercase; letter-spacing: .04em; color: var(--red); }
+.req-grid p { font-size: 14px; color: var(--muted); }
+.tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.tracks .panel { gap: 10px; padding: 28px; }
+.tracks .panel h2 { font-size: 22px; }
+.tracks .panel p { color: var(--muted); }
+.tracks .panel.on { box-shadow: inset 0 0 0 2px var(--red); }
+
+/* How it works */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: s; }
+.steps li { background: var(--panel); padding: 28px 24px; display: grid; gap: 10px; align-content: start; }
+.steps li::before { counter-increment: s; content: "Step " counter(s); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.steps h3 { font-size: 19px; }
+.steps p, .who p { color: var(--muted); font-size: 15px; }
+.who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.who div { border-top: 3px solid var(--red); padding-top: 16px; display: grid; gap: 8px; }
+.who h3 { font-size: 19px; }
+.demo { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.demo > * { min-width: 0; }
+.demo h2 { font-size: 29px; }
+.demo .text { display: grid; gap: 16px; justify-items: start; }
+
+/* Problems board */
+.board-tools { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filters button { font: 500 13px var(--font); padding: 8px 16px; border-radius: 999px; border: 1px solid #CDCDCD; background: #fff; color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--red); color: #fff; border-color: var(--red); }
+.count { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ticket { background: var(--panel); padding: 26px; display: grid; gap: 12px; grid-template-rows: auto auto 1fr auto auto; min-width: 0; }
+.ticket.new { box-shadow: inset 0 0 0 2px var(--red); }
+.t-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.ticket h3 { font-size: 18px; }
+.ticket p { font-size: 14px; color: var(--muted); }
+.pill { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+.st-open { background: var(--red); color: #fff; }
+.st-matched { background: #DCEFE2; color: #1E6B3E; }
+.st-progress { background: #F6E7CC; color: #7E4A00; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; padding: 3px 9px; border: 1px solid #D4D4D4; background: #fff; }
+.poc { font-size: 13px; border-top: 1px solid var(--line); padding-top: 12px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.poc span:first-child { color: var(--muted); }
+
+/* Past projects */
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.project { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.project .tag { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.project h3 { font-size: 20px; }
+.project p { font-size: 15px; color: var(--muted); }
+.project .by { font-size: 13px; color: var(--ink); }
+
+/* People */
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+.person { display: grid; grid-template-columns: 64px 1fr; gap: 18px; align-items: start; border-top: 4px solid var(--red); background: var(--panel); padding: 26px; min-width: 0; }
+.person > div { display: grid; gap: 6px; min-width: 0; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; font-size: 26px; font-weight: 600; }
+.person h2 { font-size: 22px; }
+.person .role { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--red); }
+.person p:not(.role) { color: var(--muted); font-size: 15px; }
+.proposed { font-size: 13px; color: var(--muted); }
+.proposed b { color: var(--ink); font-weight: 600; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact .panel p { color: var(--muted); }
+.copy-line { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.copy-line code { font: 15px var(--font); background: #fff; border: 1px solid #D4D4D4; padding: 8px 12px; user-select: all; }
+.copy-btn { font: 600 12px var(--font); letter-spacing: .06em; text-transform: uppercase; border: 0; background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 6px; cursor: pointer; }
+
+/* Footer */
+footer { background: var(--footer); color: var(--footer-text); padding-block: 48px 36px; }
+.foot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.foot-grid h4 { margin: 0 0 14px; font-size: 20px; font-weight: 500; color: #fff; }
+.foot-grid ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: 15px; }
+.foot-grid li::before { content: "→"; margin-right: 10px; }
+.foot-grid a { text-decoration: none; }
+.foot-grid a:hover { text-decoration: underline; }
+.foot-grid address { font-style: normal; font-size: 15px; display: grid; gap: 4px; }
+.foot-base { margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.18); font-size: 13px; color: #CFCFCF; }
+
+@media (max-width: 960px) {
+  .main-nav { display: none; }
+  .subnav { gap: 8px 12px; }
+  .subnav a { font-size: 13px; padding: 0 8px 6px; }
+  .board, .projects { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .checks { grid-template-columns: 1fr 1fr; }
+  .benefits, .req-grid { grid-template-columns: 1fr 1fr; }
+  .req-grid > div:nth-child(3) { border-left: 0; }
+  .req-grid > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 640px) {
+  .two-up, .board, .projects, .steps, .who, .demo, .contact, .row2, .foot-grid, .checks, .benefits, .req-grid, .tracks, .people { grid-template-columns: 1fr; }
+  .person { grid-template-columns: 52px 1fr; padding: 20px; }
+  .avatar { width: 52px; height: 52px; font-size: 22px; }
+  .req-grid > div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .logos { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .logo-slot { height: 90px; font-size: 16px; }
+  .panel, form { padding: 22px; }
+  .page-title { font-size: 25px; }
+  .panel h2, .demo h2 { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto !important; } }
+</style>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap head-row">
+    <a class="logo" href="#home" aria-label="VThink Tech Hub, sponsored projects home">
+      <span class="logo-mark" aria-hidden="true">VT</span>
+      <span class="logo-text"><small>Sponsored Projects at</small><strong>VTHINK TECH HUB</strong><em>Grassroots Innovation Ecosystem</em></span>
+    </a>
+    <nav class="main-nav" aria-label="Hub">
+      <a href="index.html#about">About the Hub</a>
+      <a href="index.html#cohort">Startups</a>
+      <a href="events.html">Events</a>
+      <a href="#home" class="on">Sponsored Projects</a>
+      <a href="#how">Demo Day</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="subnav-bar">
+  <div class="wrap">
+    <nav class="subnav" aria-label="Sponsored projects">
+      <a href="#home" data-view="home">Projects Home</a>
+      <a href="#sponsor" data-view="sponsor">Sponsor a Project</a>
+      <a href="#how" data-view="how">How It Works</a>
+      <a href="#problems" data-view="problems">Open Problems</a>
+      <a href="#past" data-view="past">Past Projects</a>
+      <a href="#contact" data-view="contact">Contact Us</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <!-- HOME -->
+  <section class="view wrap" id="view-home" aria-labelledby="t-home">
+    <h1 class="page-title" id="t-home">VThink Tech Hub Sponsored Projects</h1>
+    <div class="media" role="img" aria-label="Placeholder for a project video">
+      <div class="media-label"><b>Sponsored Project Showcase</b><span>VThink Tech Hub</span></div>
+      <div class="play" aria-hidden="true"></div>
+      <span class="media-note">Add your Demo Day video here</span>
+    </div>
+
+    <h2 class="center-title">What is the Sponsored Projects Program?</h2>
+    <div class="two-up">
+      <div class="panel">
+        <div class="photo"><span>Photo: a team building a prototype</span></div>
+        <h2>The Program in a Nutshell</h2>
+        <p>The Sponsored Projects Program matches a team of innovators, first-generation founders and entrepreneurs with a real problem statement defined and resourced by an industry sponsor.</p>
+        <a class="btn" href="#how">Learn More</a>
+      </div>
+      <div class="panel">
+        <div class="photo red"><span>Photo: sponsor mentor with the team</span></div>
+        <h2>Why Sponsor a Project?</h2>
+        <p>Bring a use case your company hasn't had time to solve. A dedicated team moves it forward with your data, equipment, funding or system access, while you mentor the next generation of grassroots founders.</p>
+        <a class="btn" href="#sponsor">Get Started Today</a>
+      </div>
+    </div>
+
+    <h2 class="center-title" style="margin-top:64px">Projects Looking for Sponsors</h2>
+    <div class="two-up">
+      <div class="panel feature">
+        <span class="tag">Agritech · Andhra Pradesh</span>
+        <h2>AI Farming Advisor</h2>
+        <p>A Telugu-first app that helps farmers in Krishna and Guntur choose crops, diagnose pests and find government schemes, explaining each recommendation step by step.</p>
+        <p class="proposed">Proposed by <b>Sujith S</b> · Guided by <b>Keerthi Naredla</b></p>
+        <a class="btn" href="#sponsor" data-prefill="Agritech|AI farming advisor for Andhra Pradesh farmers">Sponsor This Project</a>
+      </div>
+      <div class="panel feature">
+        <span class="tag">Water &amp; environment · Vijayawada</span>
+        <h2>Vijayawada Water Solutions</h2>
+        <p>Tech projects for the city's water problems: hard water, pipeline leaks, flooding and industrial pollution, using sensors, low-cost filters, drones and AI forecasting.</p>
+        <p class="proposed">Proposed by <b>Sujith S</b> · Guided by <b>Keerthi Naredla</b></p>
+        <a class="btn" href="#sponsor" data-prefill="Climate &amp; energy|Vijayawada water solutions">Sponsor This Project</a>
+      </div>
+    </div>
+
+    <h2 class="caps-title">Thank You to Our Recent Sponsors</h2>
+    <div class="logos" aria-label="Recent sponsors (placeholders)">
+      <div class="logo-slot"><div>Sponsor A<small>Add logo</small></div></div>
+      <div class="logo-slot"><div>Sponsor B<small>Add logo</small></div></div>
+      <div class="logo-slot"><div>Sponsor C<small>Add logo</small></div></div>
+      <div class="logo-slot"><div>Sponsor D<small>Add logo</small></div></div>
+      <div class="logo-slot"><div>Sponsor E<small>Add logo</small></div></div>
+      <div class="logo-slot"><div>Sponsor F<small>Add logo</small></div></div>
+    </div>
+  </section>
+
+  <!-- SPONSOR A PROJECT -->
+  <section class="view wrap" id="view-sponsor" aria-labelledby="t-sponsor" hidden>
+    <h1 class="page-title" id="t-sponsor">Sponsor a Project</h1>
+    <div class="prose">
+      <h2>Why Sponsor a Project?</h2>
+      <p>Sponsoring a project lets your company put a real industry problem in front of motivated innovators, first-generation founders and entrepreneurs, while moving long-running problems or early-stage ideas forward. Teams are mentored throughout the project and deliver a working prototype with clear documentation.</p>
+      <h2>What Should Sponsors Expect?</h2>
+      <ul>
+        <li>You get to know innovators who chose your problem, which can lead to hiring or a long-term partnership.</li>
+        <li>Advising the team and receiving project status updates, about one hour a week.</li>
+        <li>You advance your problem without using in-house resources.</li>
+        <li>Your company becomes known within the grassroots founder community.</li>
+        <li>You help first-time founders learn by building real solutions.</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn" href="#proposal" data-jump="proposal">Submit Your Project Idea</a>
+        <a class="btn btn-outline" href="#problems">See Open Problems</a>
+      </div>
+    </div>
+
+    <h2 class="sec-caps">What a Sponsor Gets Back</h2>
+    <div class="benefits">
+      <div class="benefit"><span class="n">01</span><h3>Move a stalled problem forward</h3><p>Advance a long-running problem or an early idea without pulling your own team off their work.</p></div>
+      <div class="benefit"><span class="n">02</span><h3>Meet people worth hiring</h3><p>Get to know innovators who chose your problem. Sponsors often hire the people who solved theirs.</p></div>
+      <div class="benefit"><span class="n">03</span><h3>A working prototype</h3><p>Teams are mentored to the finish and hand over a functional prototype with clear documentation.</p></div>
+      <div class="benefit"><span class="n">04</span><h3>Back the grassroots</h3><p>Help first-generation, first-time founders learn by shipping real work, with your name behind it.</p></div>
+    </div>
+
+    <h2 class="sec-caps">Sponsor Requirements</h2>
+    <div class="req-grid">
+      <div><h3>Advisory Role</h3><p>Name one advisor, mentor or POC from your company. Budget about an hour a week to guide the team and answer questions.</p></div>
+      <div><h3>Resources</h3><p>No fixed fee. Share what you can: data, equipment, funding or access to your systems. We scope the project with you.</p></div>
+      <div><h3>Intellectual Property</h3><p>Ownership of the work and how your company is credited are agreed in writing before the project begins.</p></div>
+      <div><h3>Deadlines</h3><p>Projects run in cohorts. Send your proposal before the next intake. If the timing doesn't suit you, contact us.</p></div>
+    </div>
+
+    <form id="proposal" novalidate aria-labelledby="t-form">
+      <h2 id="t-form">Project Proposal</h2>
+      <div class="row2">
+        <div class="field"><label for="org">Company name</label><input type="text" id="org" placeholder="e.g. Sahyadri Agro Pvt Ltd"></div>
+        <div class="field"><label for="domain">Domain</label>
+          <select id="domain">
+            <option value="">Choose a domain</option>
+            <option>Healthtech</option><option>Agritech</option><option>Manufacturing</option><option>Fintech</option><option>Climate &amp; energy</option><option>Education</option><option>Logistics</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="ptitle">Problem in one line</label><input type="text" id="ptitle" placeholder="e.g. Predict cold-storage failures before stock spoils"></div>
+      <div class="field"><label for="pstate">Problem statement</label><textarea id="pstate" placeholder="What happens today, who it affects, and what a good outcome would look like."></textarea></div>
+      <div class="field"><span class="lbl">Resources you can offer</span>
+        <div class="checks" id="resources">
+          <label><input type="checkbox" id="r-data" value="Data"> Data</label>
+          <label><input type="checkbox" id="r-equip" value="Equipment"> Equipment</label>
+          <label><input type="checkbox" id="r-fund" value="Funding"> Funding</label>
+          <label><input type="checkbox" id="r-access" value="System access"> System access</label>
+        </div>
+      </div>
+      <div class="field"><label for="rdetail">Resource details <span class="hint">(optional)</span></label><input type="text" id="rdetail" placeholder="e.g. 2 years of sensor logs, 5 test units, ₹2 lakh"></div>
+      <div class="row2">
+        <div class="field"><label for="poc">Advisor / mentor / POC name</label><input type="text" id="poc" placeholder="Who will guide the team"></div>
+        <div class="field"><label for="pocrole">Their role</label><input type="text" id="pocrole" placeholder="e.g. Head of Operations"></div>
+      </div>
+      <div class="field"><label for="pocmail">Work email</label><input type="email" id="pocmail" placeholder="name@company.com"></div>
+      <div class="form-foot">
+        <p>Preview only: submitting adds your brief to Open Problems on this screen. Nothing is sent yet.</p>
+        <button class="btn" type="submit">Submit Proposal</button>
+      </div>
+      <div class="notice" id="notice" role="status" hidden></div>
+    </form>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="view wrap" id="view-how" aria-labelledby="t-how" hidden>
+    <h1 class="page-title" id="t-how">How It Works</h1>
+    <div class="tracks">
+      <div class="panel"><span class="tag">Startup track</span><h2>Ideas become startups</h2><p>Founders bring their own idea and the hub helps turn it into a company.</p></div>
+      <div class="panel on"><span class="tag">Sponsored projects</span><h2>Industry problems become projects</h2><p>A company brings a real problem and resources, and a hub team takes it on as a project with the sponsor's mentor.</p></div>
+    </div>
+    <h2 class="center-title">From Problem Statement to Reviewed Result</h2>
+    <ol class="steps">
+      <li><h3>Industry posts a use case</h3><p>A company submits a real problem statement and the resources it can offer.</p></li>
+      <li><h3>The hub matches a team</h3><p>We scope the brief with the sponsor and match it to innovators whose skills fit.</p></li>
+      <li><h3>The team builds</h3><p>The team works on it as a project, guided by the sponsor's advisor or POC.</p></li>
+      <li><h3>The sponsor reviews</h3><p>Results are presented at Demo Day, and the sponsor decides what to adopt or extend.</p></li>
+    </ol>
+
+    <h2 class="center-title">Who the Hub Is For</h2>
+    <div class="who">
+      <div><h3>Innovators</h3><p>People who have spotted a problem in their community, workplace or field and want to fix it properly.</p></div>
+      <div><h3>First-generation founders</h3><p>The first in their family to start a business, who need mentors, networks and real customers early.</p></div>
+      <div><h3>First-time entrepreneurs</h3><p>People new to startups who want to learn by shipping real work for a real sponsor.</p></div>
+    </div>
+
+    <div class="demo">
+      <div class="photo red"><span>Photo: Demo Day presentations</span></div>
+      <div class="text">
+        <h2>Demo Day</h2>
+        <p>Every sponsored team presents its results to sponsors, mentors, investors and the wider ecosystem. Sponsors see the work first-hand and meet the teams behind it.</p>
+        <a class="btn" href="#sponsor">Sponsor a Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN PROBLEMS -->
+  <section class="view wrap" id="view-problems" aria-labelledby="t-problems" hidden>
+    <h1 class="page-title" id="t-problems">Open Problems</h1>
+    <div class="board-tools">
+      <div class="filters" role="group" aria-label="Filter by domain" id="filters"></div>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="board" id="board"></div>
+    <p class="hint" style="margin-top:20px">The two featured projects are real. The other briefs are samples to replace with real sponsor problems.</p>
+  </section>
+
+  <!-- PAST PROJECTS -->
+  <section class="view wrap" id="view-past" aria-labelledby="t-past" hidden>
+    <h1 class="page-title" id="t-past">Past Projects</h1>
+    <div class="projects">
+      <article class="project">
+        <div class="photo red"><span>Project photo</span></div>
+        <span class="tag">Healthtech · 2026</span>
+        <h3>Triage notes for cancer screening camps</h3>
+        <p>A tablet tool that helps camp volunteers record symptoms and flag patients for follow-up referral.</p>
+        <span class="by">Sponsor: a regional hospital</span>
+      </article>
+      <article class="project">
+        <div class="photo"><span>Project photo</span></div>
+        <span class="tag">Manufacturing · 2026</span>
+        <h3>Vibration alerts for older machines</h3>
+        <p>Clip-on sensors and a simple dashboard warn a small machine shop before bearings fail.</p>
+        <span class="by">Sponsor: an auto-parts supplier</span>
+      </article>
+      <article class="project">
+        <div class="photo red"><span>Project photo</span></div>
+        <span class="tag">Fintech · 2025</span>
+        <h3>Voice-first ledger for kirana stores</h3>
+        <p>Shopkeepers log credit sales by speaking in their own language. The team now runs it as a startup.</p>
+        <span class="by">Sponsor: a cooperative bank</span>
+      </article>
+    </div>
+    <p class="hint" style="margin-top:24px">Sample projects. Replace with completed work and sponsor logos.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view wrap" id="view-contact" aria-labelledby="t-contact" hidden>
+    <h1 class="page-title" id="t-contact">Contact Us</h1>
+    <div class="people">
+      <div class="person">
+        <span class="avatar" aria-hidden="true">KN</span>
+        <div><h2>Keerthi Naredla</h2><p class="role">Founder, VThink Tech Hub</p><p>Founded VThink Tech Hub to back innovative ideas from the grassroots, and started the sponsored projects program with industry.</p></div>
+      </div>
+      <div class="person">
+        <span class="avatar" aria-hidden="true">SS</span>
+        <div><h2>Sujith S</h2><p class="role">Hub Coordinator · Technical Mentor</p><p>Assistant Professor, CSE (AI &amp; ML), and PhD researcher at VIT-AP in AI-driven energy optimisation. Proposed the AI farming advisor and Vijayawada water projects.</p></div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="panel">
+        <h2>Sponsored Projects Team</h2>
+        <p>Questions about sponsoring a project, scoping a problem or joining Demo Day? Write to us and we'll reply within a week.</p>
+        <div class="copy-line"><code id="mail">ssujith@vikasinstitutionsnunna.org</code><button class="copy-btn" type="button" id="copy">Copy</button></div>
+        <p><b style="color:var(--ink)">Address:</b> VThink Tech Hub, Vikas College of Engineering and Technology, Nunna, Vijayawada Rural, Andhra Pradesh</p>
+      </div>
+      <div class="panel">
+        <h2>Ready to sponsor?</h2>
+        <p>Send us a short proposal with your problem statement, the resources you can offer and your advisor or POC.</p>
+        <a class="btn" href="#sponsor" style="justify-self:start">Submit a Proposal</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><h4>Sponsored Projects</h4><ul><li><a href="#home">Projects Home</a></li><li><a href="#how">How It Works</a></li><li><a href="#past">Past Projects</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="#sponsor">Sponsor a Project</a></li><li><a href="#problems">Open Problems</a></li><li><a href="#how">Demo Day</a></li></ul></div>
+      <div><h4>For Founders</h4><ul><li><a href="#how">Who the Hub Is For</a></li><li><a href="#problems">Join a Project</a></li><li><a href="#contact">Mentorship</a></li></ul></div>
+      <div><h4>Contact</h4><address><span>Keerthi Naredla, Founder</span><span>Sujith S, Hub Coordinator</span><span>Vikas College of Engineering and Technology, Nunna, Vijayawada Rural, AP</span><span style="overflow-wrap:anywhere">ssujith@vikasinstitutionsnunna.org</span></address></div>
+    </div>
+    <div class="foot-base">VThink Tech Hub · A grassroots ecosystem for innovators, first-generation founders and entrepreneurs · Part of the Institution's Innovation Council (IIC), Vikas College of Engineering and Technology · <a href="index.html">VThink Tech Hub home</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var views = ["home", "sponsor", "how", "problems", "past", "contact"];
+  function show(name, scroll) {
+    if (views.indexOf(name) < 0) name = "home";
+    views.forEach(function (v) { document.getElementById("view-" + v).hidden = v !== name; });
+    document.querySelectorAll(".subnav a").forEach(function (a) {
+      if (a.dataset.view === name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    if (scroll !== false) window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", function () { show(location.hash.slice(1)); });
+  show(location.hash.slice(1), false);
+
+  document.querySelectorAll("[data-prefill]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var p = a.getAttribute("data-prefill").split("|");
+      setTimeout(function () {
+        document.getElementById("domain").value = p[0];
+        document.getElementById("ptitle").value = p[1];
+        document.getElementById("proposal").scrollIntoView({ block: "start" });
+        document.getElementById("org").focus({ preventScroll: true });
+      }, 0);
+    });
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var t = document.getElementById(a.dataset.jump);
+      t.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById("org").focus({ preventScroll: true });
+    });
+  });
+
+  var briefs = [
+    { id: "VT-01", status: "open", featured: true, domain: "Agritech", title: "AI farming advisor for Andhra Pradesh farmers", body: "A Telugu-first app that helps farmers choose crops, diagnose pests and find government schemes, with step-by-step reasoning.", res: ["Funding", "Data", "Pilot partners"], poc: "Sujith S (proposer)" },
+    { id: "VT-02", status: "open", featured: true, domain: "Climate & energy", title: "Vijayawada water solutions", body: "Projects for hard water, pipeline leaks, flooding and pollution in Vijayawada, using sensors, filters, drones and AI.", res: ["Funding", "Equipment", "System access"], poc: "Sujith S (proposer)" },
+    { id: "UC-2611", status: "open", domain: "Agritech", title: "Spot early crop disease from phone photos", body: "An offline model that flags likely blight from leaf photos taken on low-end phones.", res: ["Data", "Equipment", "Funding"], poc: "Agronomy lead" },
+    { id: "UC-2608", status: "open", domain: "Healthtech", title: "Bring patients back for follow-up screenings", body: "Many patients from rural screening camps miss their follow-up. Find a low-cost way to bring them back.", res: ["Data", "Funding"], poc: "Outreach coordinator" },
+    { id: "UC-2604", status: "matched", domain: "Manufacturing", title: "Cut changeover time on a packaging line", body: "Changeovers take 40 minutes. Prototype fixtures or a checklist that halves it.", res: ["Equipment", "System access"], poc: "Plant manager" },
+    { id: "UC-2597", status: "progress", domain: "Logistics", title: "Plan milk-collection routes in the monsoon", body: "Roads close without warning. Re-plan collection routes daily from road and weather reports.", res: ["Data", "System access"], poc: "Operations head" },
+    { id: "UC-2593", status: "open", domain: "Climate & energy", title: "Find underperforming rooftop solar panels", body: "Compare expected and actual output across 300 rooftops and flag panels that need cleaning or repair.", res: ["Data", "Funding"], poc: "Asset manager" },
+    { id: "UC-2588", status: "progress", domain: "Fintech", title: "Explain loan terms in local languages", body: "Borrowers sign terms they can't read. Build a short audio explainer for loan officers.", res: ["Funding", "System access"], poc: "Compliance lead" }
+  ];
+  var label = { open: "Open", matched: "Team matched", progress: "In progress" };
+  var active = "All";
+  var board = document.getElementById("board"), filters = document.getElementById("filters"), count = document.getElementById("count");
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+  function renderFilters() {
+    var ds = ["All"];
+    briefs.forEach(function (b) { if (ds.indexOf(b.domain) < 0) ds.push(b.domain); });
+    filters.innerHTML = "";
+    ds.forEach(function (d) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = d; b.setAttribute("aria-pressed", d === active ? "true" : "false");
+      b.addEventListener("click", function () { active = d; renderFilters(); renderBoard(); });
+      filters.appendChild(b);
+    });
+  }
+  function renderBoard() {
+    var list = briefs.filter(function (b) { return active === "All" || b.domain === active; });
+    count.textContent = list.length + " briefs · " + list.filter(function (b) { return b.status === "open"; }).length + " open";
+    board.innerHTML = list.map(function (b) {
+      return '<article class="ticket' + (b.isNew || b.featured ? " new" : "") + '">' +
+        '<div class="t-top"><span>' + (b.featured ? "<b style=\"color:var(--red)\">Featured</b> · " : "") + esc(b.id) + " · " + esc(b.domain) + '</span><span class="pill st-' + b.status + '">' + label[b.status] + "</span></div>" +
+        "<h3>" + esc(b.title) + "</h3><p>" + esc(b.body) + "</p>" +
+        '<div class="chips">' + b.res.map(function (r) { return '<span class="chip">' + esc(r) + "</span>"; }).join("") + "</div>" +
+        '<div class="poc"><span>' + (b.featured ? "Contact" : "Sponsor POC") + '</span><span>' + esc(b.poc) + "</span></div></article>";
+    }).join("");
+  }
+  renderFilters(); renderBoard();
+
+  var form = document.getElementById("proposal"), notice = document.getElementById("notice");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var req = ["org", "domain", "ptitle", "pstate", "poc", "pocmail"], first = null;
+    req.forEach(function (id) {
+      var el = document.getElementById(id);
+      var bad = !el.value.trim() || (el.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()));
+      el.classList.toggle("bad", bad); el.setAttribute("aria-invalid", bad ? "true" : "false");
+      if (bad && !first) first = el;
+    });
+    notice.hidden = false;
+    if (first) {
+      notice.innerHTML = "<strong>Some fields still need filling in</strong><span>Add the company name, domain, problem, problem statement, POC name and a valid work email.</span>";
+      first.focus(); return;
+    }
+    var res = Array.prototype.map.call(document.querySelectorAll("#resources input:checked"), function (c) { return c.value; });
+    var poc = document.getElementById("poc").value.trim(), role = document.getElementById("pocrole").value.trim();
+    var id = "UC-" + (2612 + briefs.filter(function (b) { return b.isNew; }).length);
+    briefs.unshift({ id: id, status: "open", isNew: true, domain: document.getElementById("domain").value,
+      title: document.getElementById("ptitle").value.trim(), body: document.getElementById("pstate").value.trim(),
+      res: res.length ? res : ["To be discussed"], poc: role ? poc + ", " + role : poc });
+    active = "All"; renderFilters(); renderBoard();
+    notice.innerHTML = '<strong>Brief ' + id + ' added</strong><span>It now appears first on <a href="#problems">Open Problems</a>. In the live version, the hub team would contact your POC to scope it.</span>';
+    form.reset();
+  });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var btn = this, text = document.getElementById("mail").textContent;
+    function done(ok) { btn.textContent = ok ? "Copied" : "Select and copy"; setTimeout(function () { btn.textContent = "Copy"; }, 1800); }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { selectMail(); done(false); });
+    } catch (err) { selectMail(); done(false); }
+    function selectMail() { var r = document.createRange(); r.selectNodeContents(document.getElementById("mail")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
+})();
+</script>
+</body>
+</html>
