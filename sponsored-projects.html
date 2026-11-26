@@ -76,6 +76,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 .media { aspect-ratio: 16 / 9; max-width: 100%; position: relative; overflow: hidden; display: grid; place-items: center; color: #fff;
   background: linear-gradient(120deg, rgba(20,20,22,.55), rgba(20,20,22,.15)), repeating-linear-gradient(135deg, #8C1C1C 0 26px, #7A1717 26px 52px); }
+.media video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; background: #0e0e10; }
 .media-label { position: absolute; left: 20px; top: 16px; display: grid; line-height: 1.3; }
 .media-label b { font-size: 17px; font-weight: 600; }
 .media-label span { font-size: 12px; opacity: .85; }
@@ -277,10 +278,11 @@ footer { background: var(--footer); color: var(--footer-text); padding-block: 48
   <!-- HOME -->
   <section class="view wrap" id="view-home" aria-labelledby="t-home">
     <h1 class="page-title" id="t-home">VThink Tech Hub Sponsored Projects</h1>
-    <div class="media" role="img" aria-label="Placeholder for a project video">
-      <div class="media-label"><b>Sponsored Project Showcase</b><span>VThink Tech Hub</span></div>
-      <div class="play" aria-hidden="true"></div>
-      <span class="media-note">Add your Demo Day video here</span>
+    <div class="media">
+      <video controls playsinline preload="metadata" poster="assets/video/demo-day-promo-poster.jpg"
+        aria-label="Sponsored Projects Demo Day promo: AI Farming Advisor and Vijayawada Water Solutions">
+        <source src="assets/video/demo-day-promo.mp4" type="video/mp4">
+      </video>
     </div>
 
     <h2 class="center-title">What is the Sponsored Projects Program?</h2>
