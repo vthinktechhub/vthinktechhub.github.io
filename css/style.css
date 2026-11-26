@@ -45,10 +45,18 @@ header.top{background:var(--ink);color:var(--on-ink);position:sticky;top:0;z-ind
 .founded{margin:14px 0 0;font-size:.95rem;opacity:.92}
 .founded b{color:var(--gold);font-weight:600}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.97rem;border:1.5px solid transparent}
-.btn.primary{background:var(--gold);color:#1A1405}
+.btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.97rem;border:1.5px solid transparent;transition:transform .15s ease,box-shadow .15s ease,background-color .15s ease,border-color .15s ease}
+.btn.primary{background:var(--gold);color:#1A1405;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
 .btn.ghost{border-color:rgba(244,246,251,.4);color:var(--on-ink)}
 .btn.dark{background:var(--ink);color:var(--on-ink)}
+/* Buttons (CTA Gallery-inspired polish): internal links get a trailing arrow that slides on hover; external links keep their ↗ */
+.btn:not([target="_blank"])::after{content:"→";margin-left:8px;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,20,45,.22)}
+.btn.primary:hover{box-shadow:inset 0 -2px 0 rgba(0,0,0,.18),0 8px 20px rgba(10,20,45,.22)}
+.btn.ghost:hover{border-color:rgba(244,246,251,.8);background:rgba(244,246,251,.06)}
+.btn:hover::after{transform:translateX(4px)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.btn,.btn::after{transition:none}.btn:hover,.btn:hover::after{transform:none}}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:1px solid rgba(244,246,251,.18)}
 .stat{padding:18px 12px 22px 0}
 .stat b{display:block;font-family:var(--display);font-size:2.3rem;font-weight:800;color:var(--gold);line-height:1.05;font-variant-numeric:tabular-nums}
@@ -149,9 +157,21 @@ section{padding:72px 0 0}
 .cbox a.go{display:inline-block;margin-top:10px;font-size:.88rem;font-weight:600;color:var(--gold-text)}
 @media (max-width:760px){.contact{grid-template-columns:1fr}}
 
-footer{margin-top:80px;background:var(--ink);color:var(--on-ink);padding:32px 0 40px;font-size:.88rem}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;opacity:.85}
+/* Footer (Footer Design-inspired three tiers: brand + quick links / link columns / base line) */
+footer{margin-top:80px;background:var(--ink);color:var(--on-ink);padding:36px 0 0;font-size:.92rem}
 footer b{color:var(--gold);font-weight:600}
+footer a{color:var(--on-ink);text-decoration:none}
+footer a:hover{color:var(--gold)}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid rgba(244,246,251,.16)}
+.foot-brand{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em}
+.foot-quick{display:flex;gap:6px 22px;flex-wrap:wrap}
+.foot-quick a{opacity:.88}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:26px 0}
+.foot-cols h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:0 0 10px}
+.foot-cols a,.foot-cols span{display:block;margin:7px 0;opacity:.9}
+.foot-base{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:16px 0 30px;border-top:1px solid rgba(244,246,251,.16);font-size:.82rem;opacity:.85}
+@media (max-width:700px){.foot-cols{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.foot-cols{grid-template-columns:1fr}}
 
 /* ---------- Events page (layout modelled on a university VDC events page: breadcrumb, wide featured poster, tile grid, detail popup) ---------- */
 .navlinks a[aria-current="page"]{opacity:1;color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
